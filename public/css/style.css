@@ -1,0 +1,22 @@
+@font-face{
+    src:url("../style/fonts/Grand9K\ Pixel.ttf");
+    font-family:pixel;
+}
+body{
+    font-family:pixel;
+    background-image: url("../style/webimages/cloudy.jpeg");
+    text-align:center;
+    color:black;
+}
+h1{
+    color:black;
+}
+#survey{
+    background-color:#ffe6f2 ;
+    border: dotted 2px #ff4d88;
+    padding:10px;
+    margin:20px;
+}
+.btn{
+    background-color: #ffffff;
+}
