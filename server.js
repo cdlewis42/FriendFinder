@@ -10,6 +10,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 require("./routing/htmlRoutes")(app);
+require("./routing/apiRoutes")(app);
 
 
 app.listen(PORT, function() {
