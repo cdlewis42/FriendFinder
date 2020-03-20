@@ -11,9 +11,12 @@
 <body class = "container">
     <h1>Please answer with a 1 being not at all and a 5 being extremely!</h1>
     
-    <span><p>Submit your name!</p><input type = "textbox"></span>
+    <span><p>Submit your name!</p><input id = "name" type = "textbox"></span>
+    <p>Submit a photo of yourself!</p>
+    <input type="text" id="photo" placeholder="http:// etc.">
 
 
+<!-- Questions -->
     <form id = "survey" name = "survey">
     <p>( ͡o ꒳ ͡o ) 1. How much do you like cereal?</p>
     <input type = "radio" id = "mc" name = "question1" value = "1"> 1 <br>
@@ -85,8 +88,74 @@
     <input type = "radio" id = "mc" name = "question10" value = "4"> 4 <br>
     <input type = "radio" id = "mc" name = "question10" value = "5"> 5 <br>
 
-    <button type="submit" class = "btn">Submit Survey!</button>
+        <!-- Submit button -->
+    <button type="submit" id = "submit" class = "btn">Submit Survey!</button>
     </form>
+
+<script type = "text/javascript">
+ $("#submit").on("click", function(err){
+     err.preventDefault()
+
+    var name = $("#name").val().trim()
+    var photo = $("#photo").val().trim()
+    var userScores = []
+
+    $.each($("input[name='question1']:checked"), function(){
+        var answerValue = $(this).val();
+        userScores.push(answerValue)
+    })
+    $.each($("input[name='question2']:checked"), function(){
+        var answerValue = $(this).val();
+        userScores.push(answerValue)
+    })
+    $.each($("input[name='question3']:checked"), function(){
+        var answerValue = $(this).val();
+        userScores.push(answerValue)
+    })
+    $.each($("input[name='question4']:checked"), function(){
+        var answerValue = $(this).val();
+        userScores.push(answerValue)
+    })
+    $.each($("input[name='question5']:checked"), function(){
+        var answerValue = $(this).val();
+        userScores.push(answerValue)
+    })
+    $.each($("input[name='question6']:checked"), function(){
+        var answerValue = $(this).val();
+        userScores.push(answerValue)
+    })
+    $.each($("input[name='question7']:checked"), function(){
+        var answerValue = $(this).val();
+        userScores.push(answerValue)
+    })
+    $.each($("input[name='question8']:checked"), function(){
+        var answerValue = $(this).val();
+        userScores.push(answerValue)
+    })
+    $.each($("input[name='question9']:checked"), function(){
+        var answerValue = $(this).val();
+        userScores.push(answerValue)
+    })
+    $.each($("input[name='question10']:checked"), function(){
+        var answerValue = $(this).val();
+        userScores.push(answerValue)
+    })
+
+    newFriend = {
+        "name":name,
+        "photo":photo,
+        "scores":userScores
+    }
+    var txt = $("input").val()
+    $.post("/api/new", newFriend, function (result){
+        $("match-name").text(result.name)
+        $("match-photo").attr("src", result.photo)
+        $("#results").modal("toggle")
+    })
+ })
+
+
+</script>
     
     
 </body>
