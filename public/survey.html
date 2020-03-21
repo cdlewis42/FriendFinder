@@ -1,162 +1,184 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FriendFinder</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href ="/css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
-    
-<body class = "container">
-    <h1>Please answer with a 1 being not at all and a 5 being extremely!</h1>
-    
-    <span><p>Submit your name!</p><input id = "name" type = "textbox"></span>
+
+<body class="container">
+    <div id="results">
+        <div id="match-name"></div>
+        <div id="match-photo"></div>
+    </div>
+
+    <h1>Please answer with a 1 being Strongy Disagree and a 5 being Strongly Agree!</h1>
+
+
+    <span>
+        <p>Submit your name!</p><input id="name" type="textbox">
+    </span>
     <p>Submit a photo of yourself!</p>
     <input type="text" id="photo" placeholder="http:// etc.">
 
 
-<!-- Questions -->
-    <form id = "survey" name = "survey">
-    <p>( ͡o ꒳ ͡o ) 1. How much do you like cereal?</p>
-    <input type = "radio" id = "mc" name = "question1" value = "1"> 1 <br>
-    <input type = "radio" id = "mc" name = "question1" value = "2"> 2 <br>
-    <input type = "radio" id = "mc" name = "question1" value = "3"> 3 <br>
-    <input type = "radio" id = "mc" name = "question1" value = "4"> 4 <br>
-    <input type = "radio" id = "mc" name = "question1" value = "5"> 5 <br>
+    <!-- Questions -->
+    <form id="survey" name="survey">
 
-    <p>2. Did you really like Myspace? ( ´ω` )۶</p>
-    <input type = "radio" id = "mc" name = "question2" value = "1"> 1 <br>
-    <input type = "radio" id = "mc" name = "question2" value = "2"> 2 <br>
-    <input type = "radio" id = "mc" name = "question2" value = "3"> 3 <br>
-    <input type = "radio" id = "mc" name = "question2" value = "4"> 4 <br>
-    <input type = "radio" id = "mc" name = "question2" value = "5"> 5 <br>
+        <p>( ͡o ꒳ ͡o ) 1. How much do you like cereal?</p>
+        <select data-placeholder = "" id = "q1">
+        <option value="1"> 1 </option>
+        <option value="2"> 2 </option>
+        <option value="3"> 3 </option>
+        <option value="4"> 4 </option>
+        <option value="5"> 5 </option>
+        </select>
 
-    <p>Σʕﾟᴥﾟﾉʔﾉ 3. How old are you?</p>
-    <input type = "radio" id = "mc" name = "question3" value = "1"> 1 <br>
-    <input type = "radio" id = "mc" name = "question3" value = "2"> 2 <br>
-    <input type = "radio" id = "mc" name = "question3" value = "3"> 3 <br>
-    <input type = "radio" id = "mc" name = "question3" value = "4"> 4 <br>
-    <input type = "radio" id = "mc" name = "question3" value = "5"> 5 <br>
+        <p>2. Did you really like Myspace? ( ´ω` )۶</p>
+        <select data-placeholder = "" id = "q2">
+        <option value="1"> 1 </option>
+        <option value="2"> 2 </option>
+        <option value="3"> 3 </option>
+        <option value="4"> 4 </option>
+        <option value="5"> 5 </option>
+        </select>
 
-    <p>ଘ(੭ ˘ ᵕ˘)━☆ﾟ.*･｡ﾟᵕ꒳ᵕ~ 4. I am drowning and an elderly lady is drowing, what is the likelihood you will save me?</p>
-    <input type = "radio" id = "mc" name = "question4" value = "1"> 1 <br>
-    <input type = "radio" id = "mc" name = "question4" value = "2"> 2 <br>
-    <input type = "radio" id = "mc" name = "question4" value = "3"> 3 <br>
-    <input type = "radio" id = "mc" name = "question4" value = "4"> 4 <br>
-    <input type = "radio" id = "mc" name = "question4" value = "5"> 5 <br>
+        <p>Σʕﾟᴥﾟﾉʔﾉ 3. How old are you?</p>
+        <select data-placeholder = "" id = "q3">
+        <option value="1"> 1 </option>
+        <option value="2"> 2 </option>
+        <option value="3"> 3 </option>
+        <option value="4"> 4 </option>
+        <option value="5"> 5 </option>
+        </select>
 
-    <p>(=｀ω´=) 5. How likely are you to watch Cats the Musical with me?</p>
-    <input type = "radio" id = "mc" name = "question5" value = "1"> 1 <br>
-    <input type = "radio" id = "mc" name = "question5" value = "2"> 2 <br>
-    <input type = "radio" id = "mc" name = "question5" value = "3"> 3 <br>
-    <input type = "radio" id = "mc" name = "question5" value = "4"> 4 <br>
-    <input type = "radio" id = "mc" name = "question5" value = "5"> 5 <br>
+        <p>ଘ(੭ ˘ ᵕ˘)━☆ﾟ.*･｡ﾟᵕ꒳ᵕ~ 4. I am drowning and an elderly lady is drowing, what is the likelihood you will save
+            me?</p>
+        <select data-placeholder = "" id = "q4">
+        <option value="1"> 1 </option>
+        <option value="2"> 2 </option>
+        <option value="3"> 3 </option>
+        <option value="4"> 4 </option>
+        <option value="5"> 5 </option>
+        </select>
 
-    <p>ತ_ʖತ 6. 2 + 2 = ?</p>
-    <input type = "radio" id = "mc" name = "question6" value = "1"> 1 <br>
-    <input type = "radio" id = "mc" name = "question6" value = "2"> 2 <br>
-    <input type = "radio" id = "mc" name = "question6" value = "3"> 3 <br>
-    <input type = "radio" id = "mc" name = "question6" value = "4"> 4 <br>
-    <input type = "radio" id = "mc" name = "question6" value = "5"> 5 <br>
+        <p>(=｀ω´=) 5. How likely are you to watch Cats the Musical with me?</p>
+        <select data-placeholder = "" id = "q5">
+        <option value="1"> 1 </option>
+        <option value="2"> 2 </option>
+        <option value="3"> 3 </option>
+        <option value="4"> 4 </option>
+        <option value="5"> 5 </option>
+        </select>
 
-    <p>(⁄˘⁄ ⁄ ω⁄ ⁄ ˘⁄)♡ 7. Bagels vs Waffles? 1 for bagels, 5 for Waffles.</p>
-    <input type = "radio" id = "mc" name = "question7" value = "1"> 1 <br>
-    <input type = "radio" id = "mc" name = "question7" value = "2"> 2 <br>
-    <input type = "radio" id = "mc" name = "question7" value = "3"> 3 <br>
-    <input type = "radio" id = "mc" name = "question7" value = "4"> 4 <br>
-    <input type = "radio" id = "mc" name = "question7" value = "5"> 5 <br>
+        <p>ತ_ʖತ 6. 2 + 2 = ?</p>
+        <select data-placeholder = "" id = "q6">
+        <option value="1"> 1 </option>
+        <option value="2"> 2 </option>
+        <option value="3"> 3 </option>
+        <option value="4"> 4 </option>
+        <option value="5"> 5 </option>
+        </select>
 
-    <p>(´ิ ❥ ´ิ♡) 8. You walk into the kitchen with no legs and you see your girl is cooking dishes in the rain, wyd? </p>
-    <input type = "radio" id = "mc" name = "question8" value = "1"> 1 <br>
-    <input type = "radio" id = "mc" name = "question8" value = "2"> 2 <br>
-    <input type = "radio" id = "mc" name = "question8" value = "3"> 3 <br>
-    <input type = "radio" id = "mc" name = "question8" value = "4"> 4 <br>
-    <input type = "radio" id = "mc" name = "question8" value = "5"> 5 <br>
+        <p>(⁄˘⁄ ⁄ ω⁄ ⁄ ˘⁄)♡ 7. Bagels vs Waffles? 1 for bagels, 5 for Waffles.</p>
+        <select data-placeholder = "" id = "q7">
+        <option value="1"> 1 </option>
+        <option value="2"> 2 </option>
+        <option value="3"> 3 </option>
+        <option value="4"> 4 </option>
+        <option value="5"> 5 </option>
+        </select>
 
-    <p>9. How many Kesha CD's do you own? ✧･ﾟ: *✧･ﾟ♡*(ᵘʷᵘ)*♡･ﾟ✧*:･ﾟ✧</p>
-    <input type = "radio" id = "mc" name = "question9" value = "1"> 1 <br>
-    <input type = "radio" id = "mc" name = "question9" value = "2"> 2 <br>
-    <input type = "radio" id = "mc" name = "question9" value = "3"> 3 <br>
-    <input type = "radio" id = "mc" name = "question9" value = "4"> 4 <br>
-    <input type = "radio" id = "mc" name = "question9" value = "5"> 5 <br>
+        <p>(´ิ ❥ ´ิ♡) 8. You walk into the kitchen with no legs and you see your girl is cooking dishes in the rain,
+            wyd? </p>
+        <select data-placeholder = "" id = "q8">
+        <option value="1"> 1 </option>
+        <option value="2"> 2 </option>
+        <option value="3"> 3 </option>
+        <option value="4"> 4 </option>
+        <option value="5"> 5 </option>
+        </select>
 
-    <p>ᕦ( ˘ᴗ˘ )ᕤ 10. How likely are you to win in a fight against me?</p>
-    <input type = "radio" id = "mc" name = "question10" value = "1"> 1 <br>
-    <input type = "radio" id = "mc" name = "question10" value = "2"> 2 <br>
-    <input type = "radio" id = "mc" name = "question10" value = "3"> 3 <br>
-    <input type = "radio" id = "mc" name = "question10" value = "4"> 4 <br>
-    <input type = "radio" id = "mc" name = "question10" value = "5"> 5 <br>
+        <p>9. How many Kesha CD's do you own? ✧･ﾟ: *✧･ﾟ♡*(ᵘʷᵘ)*♡･ﾟ✧*:･ﾟ✧</p>
+        <select data-placeholder = "" id = "q9">
+        <option value="1"> 1 </option>
+        <option value="2"> 2 </option>
+        <option value="3"> 3 </option>
+        <option value="4"> 4 </option>
+        <option value="5"> 5 </option>
+        </select>
+
+        <p>ᕦ( ˘ᴗ˘ )ᕤ 10. How likely are you to win in a fight against me?</p>
+        <select data-placeholder = "" id = "q10">
+        <option value="1"> 1 </option>
+        <option value="2"> 2 </option>
+        <option value="3"> 3 </option>
+        <option value="4"> 4 </option>
+        <option value="5"> 5 </option>
+        </select>
+        <br>
 
         <!-- Submit button -->
-    <button type="submit" id = "submit" class = "btn">Submit Survey!</button>
+        <button type="submit" id="submit" class="btn">Submit Survey!</button>
     </form>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $("#submit").on("click", function (err) {
+            err.preventDefault()
+            //Setting up our variables
+            var name = $("#name").val().trim()
+            var photo = $("#photo").val().trim()
+            //A For loop would be good here.
+            var userScores = [
+                $("#q1").val(),
+                $("#q2").val(),
+                $("#q3").val(),
+                $("#q4").val(),
+                $("#q5").val(),
+                $("#q6").val(),
+                $("#q7").val(),
+                $("#q8").val(),
+                $("#q9").val(),
+                $("#q10").val()
+            ]
+            console.log(userScores)
+            var question1 = $("")
+            var numQuestions = 10
+            var survey = $("#survey")
+            var question1 = $()
 
-<script type = "text/javascript">
- $("#submit").on("click", function(err){
-     err.preventDefault()
+            console.log(question1)
 
-    var name = $("#name").val().trim()
-    var photo = $("#photo").val().trim()
-    var userScores = []
+            
 
-    $.each($("input[name='question1']:checked"), function(){
-        var answerValue = $(this).val();
-        userScores.push(answerValue)
-    })
-    $.each($("input[name='question2']:checked"), function(){
-        var answerValue = $(this).val();
-        userScores.push(answerValue)
-    })
-    $.each($("input[name='question3']:checked"), function(){
-        var answerValue = $(this).val();
-        userScores.push(answerValue)
-    })
-    $.each($("input[name='question4']:checked"), function(){
-        var answerValue = $(this).val();
-        userScores.push(answerValue)
-    })
-    $.each($("input[name='question5']:checked"), function(){
-        var answerValue = $(this).val();
-        userScores.push(answerValue)
-    })
-    $.each($("input[name='question6']:checked"), function(){
-        var answerValue = $(this).val();
-        userScores.push(answerValue)
-    })
-    $.each($("input[name='question7']:checked"), function(){
-        var answerValue = $(this).val();
-        userScores.push(answerValue)
-    })
-    $.each($("input[name='question8']:checked"), function(){
-        var answerValue = $(this).val();
-        userScores.push(answerValue)
-    })
-    $.each($("input[name='question9']:checked"), function(){
-        var answerValue = $(this).val();
-        userScores.push(answerValue)
-    })
-    $.each($("input[name='question10']:checked"), function(){
-        var answerValue = $(this).val();
-        userScores.push(answerValue)
-    })
-
-    newFriend = {
-        "name":name,
-        "photo":photo,
-        "scores":userScores
-    }
-    var txt = $("input").val()
-    $.post("/api/new", newFriend, function (result){
-        $("match-name").text(result.name)
-        $("match-photo").attr("src", result.photo)
-        $("#results").modal("toggle")
-    })
- })
+            console.log(userScores)
 
 
-</script>
-    
-    
+            newFriend = {
+                "name": name,
+                "photo": photo,
+                "scores": userScores
+            }
+
+
+
+
+
+            console.log("newFriend: " + newFriend.name + "  photo link: " + newFriend.photo + "  scores: " +
+                newFriend.userscores)
+
+            $.post("/api/survey", newFriend, function (result) {
+                $("match-name").text(result.name)
+                $("match-photo").attr("src", result.photo)
+            })
+        })
+    </script>
+
+
 </body>
+
 </html>
